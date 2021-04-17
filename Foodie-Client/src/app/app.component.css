@@ -1,0 +1,11 @@
+body1{
+    background-image:url("../assets/back1.jpeg");
+    max-width: 100%;
+    height: auto;
+}
+body {
+    background-image: url('../assets/back1.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
