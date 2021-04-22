@@ -10,20 +10,20 @@
                     <form [formGroup]="loginForm" (ngSubmit)="login()">
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <select class="form-control" formControlName="role" id="role">
+                            <select class="form-control" id="role">
                                 <option value="customer">Customer</option>
                                 <option value="vendor">Vendor</option>
                                 <option value="admin">Admin</option>
                             </select>
-                            <p *ngIf="loginForm.controls.role.errors && loginForm.controls.role.touched" class="alert alert-danger">
+                            <!-- <p *ngIf="loginForm.controls.role.errors && loginForm.controls.role.touched" class="alert alert-danger">
                                 Role is required
-                            </p>
+                            </p> -->
                         </div>
                         <div class="form-group">
-                            <label for="uname">Username</label>
-                            <input id="uname" formControlName="uname" type="text" class="form-control">
-                            <p *ngIf="loginForm.controls.uname.errors && loginForm.controls.uname.touched" class="alert alert-danger">
-                                uname is required
+                            <label for="contactNumber">Contact Number</label>
+                            <input id="contactNumber" formControlName="contactNumber" type="text" class="form-control">
+                            <p *ngIf="loginForm.controls.contactNumber.errors && loginForm.controls.contactNumber.touched" class="alert alert-danger">
+                                contactNumber is required
                             </p>
                         </div>
                         <div class="form-group">
@@ -38,6 +38,12 @@
                                 <input type="submit" class="btn btn-success" value="Submit" [disabled]="loginForm.invalid">
                                 <input type="reset" class="btn btn-danger" value="Cancel">
                             </div>
+                        </div>
+                        <div *ngIf="successMessage" class="text-success">
+                            {{successMessage}}
+                        </div>
+                        <div *ngIf="errorMessage" class="text-danger">
+                            {{errorMessage}}
                         </div>
                     </form>
                 </div>
