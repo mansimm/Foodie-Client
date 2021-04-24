@@ -25,8 +25,6 @@ export class LoginComponent implements OnInit {
 
   login()
   {
-    alert("Login method called");
-
     this.errorMessage = null;
     this.successMessage = null;
 
