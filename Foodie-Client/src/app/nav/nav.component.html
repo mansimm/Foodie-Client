@@ -6,7 +6,8 @@
     </button>
 
     <div class="collapse navbar-collapse navbar-dark" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+        <!-- items will be displayed only on successfull login -->
+        <ul class="navbar-nav" *ngIf="login">
             <li class="nav-item">
                 <a class="nav-link" href="#">Shop</a>
             </li>
@@ -17,14 +18,15 @@
                 <a class="nav-link" href="#">Contact Us</a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" *ngIf="!login">
             <li class="nav-item"> <a routerLink="/app-login" routerLinkActive="active" class="nav-link">Login</a></li>
             <li class="nav-item"> <a routerLink="/app-register" routerLinkActive="active" class="nav-link">Sign Up</a></li>
         </ul>
-        <!-- <ul class="navbar-nav ml-auto">
+        <!-- items will be displayed only on successfull login -->
+        <ul class="navbar-nav ml-auto"  *ngIf="login">
             <li class="nav-item"> <a class="nav-link" href="#">Profile</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Logout</a></li>
-        </ul> -->
+        </ul> 
     </div>
 </nav>
 <router-outlet></router-outlet>
