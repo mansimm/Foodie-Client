@@ -11,7 +11,7 @@ export class RegisterService {
 
   registerService(registerForm : any):Observable<any>
   {
-    let url = "";
+    let url = "http://localhost:4000/foodie/userAPI/register";
     return this.http.post(url,registerForm);
   }
 }

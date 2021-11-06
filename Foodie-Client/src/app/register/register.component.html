@@ -7,7 +7,14 @@ height: 100%;
             <div class="col-md-6 offset-md-3 col-sm-12">
                 <div class="card">
                     <div class="card-header text-center ">
-                        User Registration
+                        <div class="row">
+                            <div class="col-md-11">User Registration</div>
+                            <div class="col-md-1">
+                                <a routerLink="/app-homepage" routerLinkActive="active" class="nav-link">
+                                    <input type="button" class=".btn" value="x">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form [formGroup]="registerForm" (ngSubmit)="register()">
@@ -83,7 +90,12 @@ height: 100%;
                         </form>
                     </div>
                     <div class="card-footer">
-                        Alredy have an account? <a routerLink="/app-login" routerLinkActive="active">Log In</a>
+                        <div>
+                            Alredy have an account? <a routerLink="/app-login" routerLinkActive="active">Log In</a>
+                        </div>
+                        <div>
+                            <a routerLink="/app-homepage" routerLinkActive="active" class="nav-link">Back to Homepage</a>
+                        </div>
                     </div>
                 </div>
             </div>
