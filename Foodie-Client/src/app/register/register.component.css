@@ -14,3 +14,17 @@
   .ng-invalid:not(form)  {
     border-left: 5px solid #a94442; /* red */
   }
+.close-btn
+{
+  margin: 0%;
+  background-color: green;/* rgb(248, 246, 246);*/
+  border: none;
+  color: black;
+  padding: 0px 0px 0px 0px;/*top-btm l-r*/
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 2px;
+}

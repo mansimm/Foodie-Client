@@ -7,7 +7,14 @@ height: 100vh;
             <div class="col-md-6 offset-md-3 col-sm-12">
                 <div class="card">
                     <div class="card-header text-center">
-                        User Login
+                        <div class="row">
+                            <div class="col-md-11">User Login</div>
+                            <div class="col-md-1">
+                                <a routerLink="/app-homepage" routerLinkActive="active" class="">
+                                x
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <form [formGroup]="loginForm" (ngSubmit)="login()">
@@ -57,9 +64,6 @@ height: 100vh;
                     <div class="card-footer">
                         <div>
                             New to Foodie <a routerLink="/app-register" routerLinkActive="active" >Create account</a>
-                        </div>
-                        <div>
-                            <a routerLink="/app-homepage" routerLinkActive="active" class="nav-link">Back to Homepage</a>
                         </div>
                     </div>
                     
