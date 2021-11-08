@@ -20,10 +20,10 @@ height: 100vh;
                         <form [formGroup]="loginForm" (ngSubmit)="login()">
                             <div class="form-group">
                                 <label for="role">Role</label>
-                                <select class="form-control" id="role" required>
-                                    <option value="customer">Customer</option>
-                                    <option value="vendor">Vendor</option>
-                                    <option value="admin">Admin</option>
+                                <select class="form-control" id="role" formControlName="role" type="select" required>
+                                    <option value="CUSTOMER">Customer</option>
+                                    <option value="VENDOR">Vendor</option>
+                                    <option value="ADMIN">Admin</option>
                                 </select>
                                 <!-- <p *ngIf="loginForm.controls.role.errors && loginForm.controls.role.touched" class="alert alert-danger">
                                 Role is required
