@@ -26,6 +26,12 @@ import { FooterComponent } from './footer/footer.component'
     ReactiveFormsModule,
     HttpClientModule
   ],
+  //added
+  entryComponents: [
+    LoginComponent,
+    HomepageComponent,
+    FooterComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

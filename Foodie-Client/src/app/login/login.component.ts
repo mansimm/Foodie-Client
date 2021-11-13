@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
       success => {
         this.user = success;//added
         sessionStorage.setItem("user",JSON.stringify(this.user));//added
+        sessionStorage.setItem("isLoggedin",JSON.stringify(true));
         //sessionStorage.setItem("userType",JSON.stringify("Customer"));
         this.tryToLogin=false;
         this.router.navigate(['/homepage']);
@@ -65,6 +66,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('isLoggedIn', 'true');
       },
       error => {
+        sessionStorage.setItem("isLoggedin",JSON.stringify(false));//added
         this.errorMessage = error.error.errorMessage;
         console.log(error.error.errorMessage);
         this.loggedin = false;

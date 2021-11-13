@@ -18,12 +18,12 @@
                 <a class="nav-link" href="#">Contact Us</a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto" *ngIf="!login">
+        <ul class="navbar-nav ml-auto" *ngIf="!isLogin">
             <li class="nav-item"> <a routerLink="/app-login" routerLinkActive="active" class="nav-link">Login</a></li>
             <li class="nav-item"> <a routerLink="/app-register" routerLinkActive="active" class="nav-link">Sign Up</a></li>
         </ul>
         <!-- items will be displayed only on successfull login -->
-        <ul class="navbar-nav ml-auto"  *ngIf="login">
+        <ul class="navbar-nav ml-auto"  *ngIf="isLogin">
             <li class="nav-item"> <a class="nav-link" href="#">Profile</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Logout</a></li>
         </ul> 
