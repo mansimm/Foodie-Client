@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NavService } from './nav.service'
 
 @Component({
   selector: 'app-nav',
@@ -7,18 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  @Input()
-  login;
-  isLogin=false;
+  //@Input()
+  //login;
+  isLoggedIn=false;
 
-  constructor() { }
+  constructor(private navbarService: NavService) { 
+    this.navbarService.getLoginStatus().subscribe((status:boolean) => this.isLoggedIn = status);
+  }
 
   ngOnInit(): void {
     let myItem = sessionStorage.getItem('isLoggedIn');
     console.log("sessionStorage in nav login=>"+myItem);
-    console.log("nav login="+this.login);
-    this.login = !myItem;
-    this.isLogin= (myItem=="true");//added
+    //console.log("nav login="+this.login);
+    //this.login = !myItem;
+    this.isLoggedIn= (myItem=="true");//added
   }
 
 }

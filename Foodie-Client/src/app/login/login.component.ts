@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { LoginService } from './login.service';
+import { NavService } from '../nav/nav.service'// '../nav.service';
 import { EventEmitter, Output } from '@angular/core'
 import { SessionInfo } from '../model/sessionInfo'
 import { User } from '../shared/models/User';
@@ -20,15 +21,18 @@ export class LoginComponent implements OnInit {
   errorMessage: String;
   successMessage: String;
 
-  loggedin: boolean = false;
+  isLoggedIn: boolean = false;
   @Output()
   customevent: EventEmitter<Boolean> = new EventEmitter<Boolean>();
    emitevent(){
      console.log("emitevent is called -----");
-     this.customevent.emit(this.loggedin);    
+     this.customevent.emit(this.isLoggedIn);    
    }
 
-  constructor(private fb: FormBuilder, private service: LoginService,private router:Router) { }
+  constructor(private fb: FormBuilder, private service: LoginService,private router:Router,
+    private navbarService: NavService) { 
+      this.navbarService.getLoginStatus().subscribe((status:boolean) => this.isLoggedIn = status);
+    }
 
   ngOnInit(): void {
     this.user = new User();
@@ -47,6 +51,7 @@ export class LoginComponent implements OnInit {
 
     this.service.loginService(this.loginForm.value).subscribe(
       success => {
+        this.navbarService.updateLoginStatus(true);
         this.user = success;//added
         sessionStorage.setItem("user",JSON.stringify(this.user));//added
         sessionStorage.setItem("isLoggedin",JSON.stringify(true));
@@ -57,8 +62,8 @@ export class LoginComponent implements OnInit {
 
         this.successMessage = success.message;
         console.log(success.message);
-        this.loggedin = true;
-        console.log("login===="+this.loggedin);
+        this.isLoggedIn = true;
+        console.log("login===="+this.isLoggedIn);
         this.emitevent();
         SessionInfo.contactNumber = this.loginForm.get('contactNumber').value;
         SessionInfo.isLoggedIn = true;
@@ -66,14 +71,20 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('isLoggedIn', 'true');
       },
       error => {
+        this.navbarService.updateLoginStatus(false);
         sessionStorage.setItem("isLoggedin",JSON.stringify(false));//added
         this.errorMessage = error.error.errorMessage;
         console.log(error.error.errorMessage);
-        this.loggedin = false;
+        this.isLoggedIn = false;
         this.emitevent();
         SessionInfo.isLoggedIn = false;
       }
 
     )
+  }
+
+  logout()
+  {
+    
   }
 }
