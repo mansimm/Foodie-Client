@@ -24,4 +24,10 @@ export class NavComponent implements OnInit {
     this.isLoggedIn= (myItem=="true");//added
   }
 
+  logout()
+  {
+    this.navbarService.updateLoginStatus(false);
+    sessionStorage.setItem("user",null);
+    console.log("Logout called...");
+  }
 }
