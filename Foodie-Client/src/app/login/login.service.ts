@@ -11,6 +11,7 @@ export class LoginService {
 
   loginService(loginForm:any): Observable<any>
   {
+    console.log("in login service : "+loginForm.value);
     let url = "http://localhost:4000/foodie/userAPI/login";
     return  this.http.post<any>(url,loginForm);
   }

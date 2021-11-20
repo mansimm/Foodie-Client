@@ -28,10 +28,10 @@ height: 100%;
                                 </p>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email Id</label>
-                                <input type="email" id="email" formControlName="email" class="form-control"
+                                <label for="emailId">Email Id</label>
+                                <input type="email" id="emailId" formControlName="emailId" class="form-control"
                                     placeholder="Enter your email id" required>
-                                <p *ngIf="registerForm.controls.email.errors && (registerForm.controls.email.dirty )"
+                                <p *ngIf="registerForm.controls.emailId.errors && (registerForm.controls.emailId.dirty )"
                                     class="alert alert-danger">
                                     Please enter valid email id.
                                 </p>
@@ -46,6 +46,14 @@ height: 100%;
                                 </p>
                             </div>
                             <div class="form-group">
+                                <label for="userName">Username</label>
+                                <input id="userName" formControlName="userName" type="text" class="form-control" placeholder="Enter your username" required>
+                                <p *ngIf="registerForm.controls.userName.errors && (registerForm.controls.userName.dirty)"
+                                    class="alert alert-danger">
+                                    Please enter valid username.
+                                </p>
+                            </div>
+                            <div class="form-group">
                                 <label for="password">Password</label>
                                 <input id="password" formControlName="password" type="password" class="form-control" placeholder="Enter your password" required>
                                 <p *ngIf="registerForm.controls.password.errors && (registerForm.controls.password.dirty)"
@@ -53,6 +61,7 @@ height: 100%;
                                     Please enter valid password.
                                 </p>
                             </div>
+                            <!--
                             <div class="form-group">
                                 <label for="address">Address</label>
                                 <textarea id="address" formControlName="address" type="text"
@@ -62,12 +71,13 @@ height: 100%;
                                     Please enter valid address.
                                 </p>
                             </div>
-                            <div class="form-group">
+                            -->
+                            <div class="form-group" >
                                 <label for="role">Role</label>
                                 <select formControlName="role" class="form-control" id="role" required>
                                     <option value="" disabled>--Select--</option>
-                                    <option value="customer">Customer</option>
-                                    <option value="vendor">Vendor</option>
+                                    <option value="CUSTOMER">Customer</option>
+                                    <option value="VENDOR">Vendor</option>
                                 </select>
                                 <p *ngIf="registerForm.controls.role.errors && (registerForm.controls.role.touched )"
                                     class="alert alert-danger">
