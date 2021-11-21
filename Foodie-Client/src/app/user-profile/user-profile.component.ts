@@ -24,7 +24,12 @@ export class UserProfileComponent implements OnInit {
   cards : boolean = false;
   wallets : boolean = false;
 
-  userAddresses : UserAddress[] = null;
+  userAddresses : UserAddress[] = [
+    {userAddressId:"1", userAddressName:"Home-1", area:"xyx",city:"abs",pincode:"123456",userState:"state",addressLine1:"line1",addressLine2:"addressLine2"},
+    {userAddressId:"2", userAddressName:"Home-2", area:"xyx",city:"abs",pincode:"123456",userState:"state",addressLine1:"line1",addressLine2:"addressLine2"},
+    {userAddressId:"1", userAddressName:"Home-3", area:"xyx",city:"abs",pincode:"123456",userState:"state",addressLine1:"line1",addressLine2:"addressLine2"},
+    {userAddressId:"1", userAddressName:"Home-4", area:"xyx",city:"abs",pincode:"123456",userState:"state",addressLine1:"line1",addressLine2:"addressLine2"}
+  ];
 
   constructor() { }
 

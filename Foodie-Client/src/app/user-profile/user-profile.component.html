@@ -125,13 +125,36 @@
                         orderhistory here       
                     </div>
                     <div *ngIf="address">
-                        <div class="card">
+                        <div class="card" style="width:50%; height:50%;text-align: center;">
                             <div class="card-body" >
-                                <button class="btn btn-danger">Add Address</button>
+                                <button class="btn btn-danger" style="border-radius: 50%;">+</button>
+                                <p>Add Address</p>
                             </div>
                         </div>
-                        <div *ngFor="let add of userAddresses">
-                            
+                        <div *ngFor="let add of userAddresses;index as i" >   
+                                <div class="card-deck" *ngIf="i%2==0">
+                                    <div  class="card" style="width:50%; height:50%">
+                                        <div class="card-body">
+                                            <h3>{{userAddresses[i].userAddressName}}</h3>
+                                            <p>{{userAddresses[i].area}},{{userAddresses[i].city}},{{userAddresses[i].pincode}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-info" style="margin-right:5px">Edit</button>
+                                            <button class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>   
+                                    <div  class="card" style="width:50%; height:50%">
+                                        <div class="card-body">
+                                            <h3>{{userAddresses[i+1].userAddressName}}</h3>
+                                            <p>{{userAddresses[i+1].area}},{{userAddresses[i+1].city}},{{userAddresses[i+1].pincode}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-info" style="margin-right:5px">Edit</button>
+                                            <button class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>  
+                                </div>                        
+                                                           
                         </div>       
                     </div>
                     <div *ngIf="favouritorder">
