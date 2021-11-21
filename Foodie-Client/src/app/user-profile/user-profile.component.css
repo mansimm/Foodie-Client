@@ -1,0 +1,18 @@
+.container-fluid
+{
+    background-color: rgb(236, 212, 212);
+    padding :5%;
+}
+img {
+    border-radius: 50%;
+  }
+.card
+{
+    margin : 5%;
+    
+}
+.list-group
+{
+    margin-left: 0px;
+    margin-right: 0px;
+}
