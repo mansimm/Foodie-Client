@@ -1,7 +1,4 @@
-<div class="bg-image" style="
-background-image: url('../assets/back1.jpeg');
-height: 100vh;
-">
+<div style="background-color: blanchedalmond;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
@@ -31,29 +28,126 @@ height: 100vh;
             <div class="col-4">
                 <div class="row">
                     <div class="card">
-                        <div class="card-header">Activity</div>
+                        <div class="card-header"><b>Activity</b></div>
                         <div class="card-body">
-                            <ul class="list-group list-group-flush ">
-                                <li class="list-group-item active">Pictures</li>
-                                <li class="list-group-item">Documents</li>        
-                                <li class="list-group-item">Music</li>
-                                <li class="list-group-item">Videos</li>
-                            </ul>
+                            <table class = "table table-hover table-bordered ">
+                                <!--<thead>
+                                   <tr>
+                                      <th>Footballer</th>
+                                   </tr>
+                                </thead>-->
+                                <tbody>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('review')" [style.background-color]="review == true ? 'yellow' : 'white'">Reviews</td>
+                                   </tr>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('photos')" [style.background-color]="photos == true ? 'yellow' : 'white'">Photos</td>
+                                   </tr>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('bookmarks')" [style.background-color]="bookmarks == true ? 'yellow' : 'white'">Bookmarks</td>
+                                   </tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><b>Online Ordering</b></div>
+                        <div class="card-body">
+                            <table class = "table table-hover table-bordered ">
+                                <tbody>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('orderhistory')" [style.background-color]="orderhistory == true ? 'yellow' : 'white'">Order History</td>
+                                   </tr>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('address')" [style.background-color]="address == true ? 'yellow' : 'white'">My Addresses</td>
+                                   </tr>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('favouritorder')" [style.background-color]="favouritorder == true ? 'yellow' : 'white'">Favourite Orders</td>
+                                   </tr>
+                                </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header"><b>My Subscriptions</b></div>
+                        <div class="card-body">
+                            <table class = "table table-hover table-bordered ">
+                                <tbody>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('subscription')" [style.background-color]="subscription == true ? 'yellow' : 'white'">Treats Subscriptions</td>
+                                   </tr>
+                                </tbody>
+                             </table>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="card">
-                        <div class="card-header">Online Ordering</div>
-                        Hi card
+                        <div class="card-header"><b>Payments</b></div>
+                        <div class="card-body">
+                            <table class = "table table-hover table-bordered ">
+                                <tbody>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('credits')" [style.background-color]="credits == true ? 'yellow' : 'white'">Foodie Credits</td>
+                                   </tr>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('cards')" [style.background-color]="cards == true ? 'yellow' : 'white'">Manage Cards</td>
+                                   </tr>
+                                   <tr>
+                                      <td (mouseenter)="mouseEnter('wallets')" [style.background-color]="wallets == true ? 'yellow' : 'white'">Manage Wallets</td>
+                                   </tr>
+                                </tbody>
+                             </table>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-8">
+                <div class="container" style="background-color: rgba(222, 184, 135, 0.555);margin: 5%;">
+                    Container
+                    <div *ngIf="review">
+                         Review here       
+                    </div>
+                    <div *ngIf="photos">
+                        photos here       
+                    </div>
+                    <div *ngIf="bookmarks">
+                        boookmarks here       
+                    </div>
 
+                    <div *ngIf="orderhistory">
+                        orderhistory here       
+                    </div>
+                    <div *ngIf="address">
+                        address here       
+                    </div>
+                    <div *ngIf="favouritorder">
+                        favouritorder here       
+                    </div>
+
+                    <div *ngIf="subscription">
+                        subscription here       
+                    </div>
+
+                    <div *ngIf="credits">
+                        credits here       
+                    </div>
+                    <div *ngIf="cards">
+                        cards here       
+                    </div>
+                    <div *ngIf="wallets">
+                        wallets here       
+                    </div>
+                    
+                   
+                </div>
             </div>
         </div>
     </div>
-
-
 </div>
