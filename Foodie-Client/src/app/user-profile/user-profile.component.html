@@ -125,7 +125,14 @@
                         orderhistory here       
                     </div>
                     <div *ngIf="address">
-                        address here       
+                        <div class="card">
+                            <div class="card-body" >
+                                <button class="btn btn-danger">Add Address</button>
+                            </div>
+                        </div>
+                        <div *ngFor="let add of userAddresses">
+                            
+                        </div>       
                     </div>
                     <div *ngIf="favouritorder">
                         favouritorder here       

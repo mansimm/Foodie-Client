@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserAddress } from '../shared/models/UserAddress'
 
 @Component({
   selector: 'app-user-profile',
@@ -22,6 +23,8 @@ export class UserProfileComponent implements OnInit {
   credits : boolean = false;
   cards : boolean = false;
   wallets : boolean = false;
+
+  userAddresses : UserAddress[] = null;
 
   constructor() { }
 
